@@ -23,10 +23,10 @@ export const AddGif = ({ onNewGif }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="search"
+            <input className='w-full mt-8 py-1 px-2 outline-none bg-white rounded-md placeholder-black-400' type="search"
                 onChange={handleChange}
-                placeholder="🍳"
-                value={value} />
+                placeholder="Buscar GIF"
+                value={value} />   
         </form>
     );
 }

@@ -15,3 +15,9 @@ Mi primera _App_ en _React_ donde se inserta un buscador para buscar _Gifs_ y mo
     ```sh
     yarn add prop-types
     ```
+## Tailwind
+
+[Ordernar automaticamente las clases:](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
+```sh
+npm install -D prettier prettier-plugin-tailwindcss
+```
