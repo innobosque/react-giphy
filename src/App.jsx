@@ -3,11 +3,11 @@ import { GifSearch, GifMapSearch } from "./components";
 
 
 export const App = () => {
-    const [categories, setCategories] = useState([]);
+    const [searches, setSearches] = useState([]);
 
     const handleNewGif = value => {
-        if (categories.includes(value)) return;
-        setCategories(cat => ([value, ...cat]));
+        if (searches.includes(value)) return;
+        setSearches(cat => ([value, ...cat]));
     }
     return (
         <>
@@ -20,7 +20,7 @@ export const App = () => {
                 <GifSearch onNewGif={value => handleNewGif(value)} />
             </header>
 
-            <GifMapSearch categories={categories} />
+            <GifMapSearch searches={searches} />
         </>
     );
 }
