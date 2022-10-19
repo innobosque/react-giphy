@@ -1,11 +1,14 @@
+import { LoadingSpinner } from "../LoadingSpinner";
 import { useFetchGifs } from "../../hooks/useFetchGifs";
-export const GifItem = ({ category }) => {
-    const {isLoading,images} = useFetchGifs(category);
+export const GifItem = ({search} ) => {
+    const {id,category} = search;
+    const {isLoading,error,images} = useFetchGifs(category);
     return (
         <>
-            {isLoading && 'Cargando'}
+            {isLoading && <LoadingSpinner widthHeight={'40'} />}
+            {!!error.message && error.message}
             {images.map(image=>(
-                <img className="w-full h-full object-cover" key={image.id} src={image.url} alt={image.title} />
+                <img className="w-full h-full object-cover" key={image.id} src={image.url} alt={image.title} title={image.title} />
             ))}
         </>
     )

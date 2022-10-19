@@ -3,7 +3,8 @@ import { getFetchGifs } from "../helpers/getFetchGifs";
 
 export const useFetchGifs = category => {
     const [images, setImages] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [error,setError] = useState({code:'',error:''});
 
     const getGifs = async () => {
         try {
@@ -12,8 +13,8 @@ export const useFetchGifs = category => {
             //console.table(gifs)
             setImages(gifs)
 
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            setError(err);
         } finally {
             setIsLoading(false);
         }
@@ -25,6 +26,7 @@ export const useFetchGifs = category => {
     
     return {
         isLoading,
-        images
+        images,
+        error,
     }
 }

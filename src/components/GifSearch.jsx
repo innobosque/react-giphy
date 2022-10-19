@@ -15,7 +15,7 @@ export const GifSearch = ({ onNewGif }) => {
 
         if (!!!newValue.length) return setValue('');
 
-        onNewGif(newValue);
+        onNewGif({id: Date.now(), category: newValue});
         setValue('');
     }
 

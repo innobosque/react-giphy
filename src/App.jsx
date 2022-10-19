@@ -6,7 +6,7 @@ export const App = () => {
     const [searches, setSearches] = useState([]);
 
     const handleNewGif = value => {
-        if (searches.includes(value)) return;
+        if (!!searches.find(item=>item.category.toLowerCase().includes(value.category.toLowerCase()))) return;
         setSearches(cat => ([value, ...cat]));
     }
     return (
