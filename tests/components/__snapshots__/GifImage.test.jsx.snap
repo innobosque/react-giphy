@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Componente <GifImage /> Debe hacer match con el Snapshot 1`] = `
+<div>
+  <img
+    alt="Texto alternativo"
+    class="w-full h-full object-cover"
+    src="http://placekitten.com/200/300"
+  />
+</div>
+`;
