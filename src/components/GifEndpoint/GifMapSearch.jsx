@@ -1,4 +1,4 @@
-import { GifItem } from "./GifItem";
+import { GifSearchedItem } from "./GifSearchedItem";
 
 export const GifMapSearch = ({ searches }) => {
 
@@ -9,7 +9,7 @@ export const GifMapSearch = ({ searches }) => {
                 searches.map(search => (
                     <div className="grid grid-cols-5 gap-1" key={search.id} >
                         <h3 className="col-span-5 p-5 uppercase">{search.category}</h3>
-                        <GifItem search={search} />
+                        <GifSearchedItem search={search} />
                     </div>
                 ))
             }

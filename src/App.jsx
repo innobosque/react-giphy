@@ -7,17 +7,16 @@ export const App = () => {
 
     const handleNewGif = value => {
         if (!!searches.find(item=>item.category.toLowerCase().includes(value.category.toLowerCase()))) return;
-        setSearches(cat => ([value, ...cat]));
+        setSearches(oldValues => ([value, ...oldValues]));
     }
     return (
         <>
             <header className={`p-4 bg-blue-400 bg-[url('./assets/bg-mobile-light.jpg')] bg-no-repeat bg-left-top bg-cover`}>
                 <div className="flex justify-between">
                     <h1 className="uppercase text-white  font-bold space-x-7 tracking-wider">App Gifphy</h1>
-                    <button className="w-4 h-4 bg-no-repeat bg-contain bg-[url('./assets/icon-moon.svg')] text-[0]">Modo Oscuro</button>
                 </div>
-
-                <GifSearch onNewGif={value => handleNewGif(value)} />
+                {/* Control de formulario de tipo search. Obtenemos la nueva categoría buscada  */}
+                <GifSearch onNewGif={newValue => handleNewGif(newValue)} />
             </header>
 
             <GifMapSearch searches={searches} />

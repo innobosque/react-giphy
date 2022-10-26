@@ -15,7 +15,7 @@ export const GifSearch = ({ onNewGif }) => {
 
         if (!!!newValue.length) return setValue('');
 
-        onNewGif({id: Date.now(), category: newValue});
+        onNewGif({ id: Date.now(), category: newValue });
         setValue('');
     }
 
@@ -28,11 +28,11 @@ export const GifSearch = ({ onNewGif }) => {
             <input className='w-full mt-8 py-1 px-2 outline-none bg-white rounded-md placeholder-black-400' type="search"
                 onChange={handleChange}
                 placeholder="Buscar GIF"
-                value={value} />   
+                value={value} />
         </form>
     );
 }
 
 GifSearch.propTypes = {
-    value: PropTypes.string
+    onNewGif: PropTypes.func.isRequired
 }
