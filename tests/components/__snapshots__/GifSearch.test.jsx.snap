@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Componente GitImage Hacer un match a un snapshot 1`] = `
+<div>
+  <form>
+    <input
+      class="w-full mt-8 py-1 px-2 outline-none bg-white rounded-md placeholder-black-400"
+      placeholder="Buscar GIF"
+      type="search"
+      value=""
+    />
+  </form>
+</div>
+`;

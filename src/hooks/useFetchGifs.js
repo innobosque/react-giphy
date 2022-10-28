@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getFetchGifs } from "../helpers/getFetchGifs";
 
 export const useFetchGifs = category => {
@@ -6,7 +6,8 @@ export const useFetchGifs = category => {
     const [isLoading, setIsLoading] = useState(false);
     const [error,setError] = useState({code:'',error:''});
 
-    const getGifs = async () => {
+    const getGifs = useCallback (async () => {
+        // console.log('useEffect');
         try {
             setIsLoading(true);
             const gifs = await getFetchGifs(category);
@@ -18,7 +19,7 @@ export const useFetchGifs = category => {
         } finally {
             setIsLoading(false);
         }
-    }
+    },[]);
 
     useEffect(() => {
         getGifs();
