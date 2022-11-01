@@ -3,11 +3,11 @@ import { GifSearch, GifMapSearch } from "./components";
 
 
 export const App = () => {
-    const [searches, setSearches] = useState([]);
+    const [data, setData] = useState([]);
 
     const handleNewGif = value => {
-        if (!!searches.find(item=>item.category.toLowerCase().includes(value.category.toLowerCase()))) return;
-        setSearches(oldValues => ([value, ...oldValues]));
+        if (!!data.find(item=>item.category.toLowerCase().includes(value.category.toLowerCase()))) return;
+        setData(oldValues => ([value, ...oldValues]));
     }
     return (
         <>
@@ -18,8 +18,8 @@ export const App = () => {
                 {/* Control de formulario de tipo search. Obtenemos la nueva categoría buscada  */}
                 <GifSearch onNewGif={newValue => handleNewGif(newValue)} />
             </header>
-
-            <GifMapSearch searches={searches} />
+            {/* Listado de datos */}
+            <GifMapSearch searches={data} />
         </>
     );
 }

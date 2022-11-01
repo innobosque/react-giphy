@@ -9,7 +9,7 @@ export const GifSearchedItem = ({search} ) => {
             {isLoading && <LoadingSpinner widthHeight={'40'} />}
             {!!error.message && error.message}
             {images.map(image=>(
-                <GifImage key={image.id} url={image.url} title={image.title} />
+                <GifImage key={image.id} src={image.url} alt={image.title} />
             ))}
         </>
     )

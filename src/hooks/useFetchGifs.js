@@ -7,11 +7,9 @@ export const useFetchGifs = category => {
     const [error,setError] = useState({code:'',error:''});
 
     const getGifs = useCallback (async () => {
-        // console.log('useEffect');
         try {
             setIsLoading(true);
             const gifs = await getFetchGifs(category);
-            //console.table(gifs)
             setImages(gifs)
 
         } catch (err) {

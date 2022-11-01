@@ -24,7 +24,7 @@ export const GifSearch = ({ onNewGif }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} aria-label="form">
             <input className='w-full mt-8 py-1 px-2 outline-none bg-white rounded-md placeholder-black-400' type="search"
                 onChange={handleChange}
                 placeholder="Buscar GIF"

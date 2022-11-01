@@ -1,17 +1,17 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 
-export const GifImage = ({title,url}) => {
+export const GifImage = ({alt,src}) => {
   return (
-    <img className="w-full h-full object-cover" src={url} alt={title} />
+    <img className="w-full h-full object-cover" src={src} alt={alt} />
   )
 }
 
 GifImage.propTypes = {
-    title: Proptypes.string,
-    url: Proptypes.string.isRequired
+    alt: Proptypes.string,
+    src: Proptypes.string.isRequired
 }
 
 GifImage.defaultProps = {
-    title: ''
+    alt: ''
 }

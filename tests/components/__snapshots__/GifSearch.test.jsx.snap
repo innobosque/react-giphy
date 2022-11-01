@@ -2,7 +2,9 @@
 
 exports[`Componente GitImage Hacer un match a un snapshot 1`] = `
 <div>
-  <form>
+  <form
+    aria-label="form"
+  >
     <input
       class="w-full mt-8 py-1 px-2 outline-none bg-white rounded-md placeholder-black-400"
       placeholder="Buscar GIF"
